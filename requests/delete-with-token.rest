@@ -1,0 +1,13 @@
+# @name login
+POST http://localhost:3000/login
+Content-Type: application/json
+
+{
+    "username": "admin",
+    "password": "123456"
+}
+
+###
+
+DELETE http://localhost:3000/expedientes/CNT0000202022
+Authorization: Bearer {{ login.response.body.token }}

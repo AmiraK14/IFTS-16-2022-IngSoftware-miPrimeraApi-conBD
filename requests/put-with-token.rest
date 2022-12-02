@@ -1,0 +1,59 @@
+# @name login
+POST http://localhost:3000/login
+Content-Type: application/json
+
+{
+    "username": "admin",
+    "password": "123456"
+}
+
+###
+
+PUT http://localhost:3000/expedientes/CSS488642022
+Content-Type: application/json
+Authorization: Bearer {{ login.response.body.token }}
+
+{
+      "id": "CSS488642022",
+      "numeroexpte": "48864",
+      "anio": "2022",
+      "idfuero": "CSS",
+      "caratula": "MARRANA ALICIA MARIA c/ ANSES s/AMPAROS Y SUMARISIMOS",
+      "demandado": "ANSES",
+      "juzgado": "7",
+      "secretaria": "1"
+}
+
+###
+
+PUT http://localhost:3000/expedientes/CNT0084242021
+Content-Type: application/json
+Authorization: Bearer {{ login.response.body.token }}
+
+{ 
+      "id": "CNT0084242021",
+      "numeroexpte": "008424",
+      "anio": "2021",
+      "idfuero": "CNT",
+      "caratula": "SUGASTTI, PABLO JAVIER C/ AEROPUERTOS ARGENTINA 2000 S.A. Y OTRO S/DESPIDO",
+      "demandado": "AEROPUERTOS ARGENTINA 2000 S.A.",
+      "juzgado": "65",
+      "secretaria": "",
+      "objeto":{
+            "id": "1"
+      }
+}
+
+
+###
+
+PUT http://localhost:3000/expedientes/CIV0194832020
+Content-Type: application/json
+Authorization: Bearer {{ login.response.body.token }}
+
+{
+    "objeto": {
+      "objeto": "SUCESION AB-INTESTATO"
+    }
+
+}
